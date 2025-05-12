@@ -9,6 +9,7 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+<<<<<<< HEAD
      private lazy var button: UIButton = {
          let button = UIButton()
          button.frame = CGRect(x: 100, y: 100, width: 200, height: 75)
@@ -37,4 +38,23 @@ class InfoViewController: UIViewController {
 
          present(alert, animated: true)
      }
+=======
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+>>>>>>> 4fbd0d7dce17665a2bc6761e4f21a7832afd37c7
 }
