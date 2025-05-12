@@ -9,6 +9,7 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+<<<<<<< HEAD
      private lazy var button: UIButton = {
          let button = UIButton()
          button.frame = CGRect(x: 100, y: 100, width: 200, height: 75)
