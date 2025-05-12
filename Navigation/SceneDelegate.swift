@@ -26,6 +26,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.viewControllers = controllers.map{
             UINavigationController(rootViewController: $0)
         }
+        
+        feedViewController.tabBarItem = UITabBarItem(title: "Лента", image: UIImage(systemName: "house"), tag: 0)
+        profileViewController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), tag: 1)
+        
+        tabBarController.selectedIndex = 1
+        
+        window.rootViewController = tabBarController
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        
+        
     }
 
 }
