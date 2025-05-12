@@ -18,6 +18,7 @@ class InfoViewController: UIViewController {
          
          return button
      }()
+    
      override func viewDidLoad() {
          super.viewDidLoad()
          
@@ -35,6 +36,5 @@ class InfoViewController: UIViewController {
          alert.addAction(okAction)
 
          present(alert, animated: true)
-         
      }
 }

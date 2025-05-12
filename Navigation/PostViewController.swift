@@ -20,9 +20,9 @@ class PostViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = post.title
         view.backgroundColor = .lightGray
         
@@ -34,5 +34,4 @@ class PostViewController: UIViewController {
         let infoVC = InfoViewController()
         present(infoVC, animated: true)
     }
-
 }
