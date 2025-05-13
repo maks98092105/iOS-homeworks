@@ -55,6 +55,7 @@ class ProfileHeaderView: UIView {
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.7
         
+        button.addTarget(self, action: #selector(butPressed), for: .touchUpInside)
         
         return button
     }()
@@ -91,5 +92,9 @@ class ProfileHeaderView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+ 
+    @objc func butPressed() {
+        print(statusLabel.text ?? "--")
     }
 }
