@@ -58,4 +58,38 @@ class ProfileHeaderView: UIView {
         
         return button
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addSubview(catImageView)
+        addSubview(nameLabel)
+        addSubview(statusLabel)
+        addSubview(actionButton)
+        
+        NSLayoutConstraint.activate([
+            catImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            catImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            catImageView.widthAnchor.constraint(equalToConstant: 100),
+            catImageView.heightAnchor.constraint(equalToConstant: 100),
+            
+            nameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 27),
+            nameLabel.leadingAnchor.constraint(equalTo: catImageView.trailingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            statusLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -34),
+            statusLabel.leadingAnchor.constraint(equalTo: catImageView.trailingAnchor, constant: 20),
+            statusLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            actionButton.topAnchor.constraint(equalTo: catImageView.bottomAnchor, constant: 16),
+            actionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            actionButton.heightAnchor.constraint(equalToConstant: 50),
+            
+        ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
