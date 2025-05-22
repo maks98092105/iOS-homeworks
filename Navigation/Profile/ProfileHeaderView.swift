@@ -1,10 +1,3 @@
-//
-//  ProfileHeaderView.swift
-//  Navigation
-//
-//  Created by Максим Камышев on 13.05.2025.
-//
-
 import UIKit
 
 class ProfileHeaderView: UIView {
@@ -60,6 +53,22 @@ class ProfileHeaderView: UIView {
         return button
     }()
     
+    private lazy var newButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("New button", for: .normal)
+        button.backgroundColor = .orange
+        button.setTitleColor(.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.layer.cornerRadius = 4
+        button.layer.shadowOffset = CGSize(width: 4, height: 4)
+        button.layer.shadowRadius = 4
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.7
+        
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -72,6 +81,7 @@ class ProfileHeaderView: UIView {
         addSubview(nameLabel)
         addSubview(statusLabel)
         addSubview(actionButton)
+        addSubview(newButton)
     }
     
     private func setupConstraints() {
@@ -94,6 +104,10 @@ class ProfileHeaderView: UIView {
             actionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             actionButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            newButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            newButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            newButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
