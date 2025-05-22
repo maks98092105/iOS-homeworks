@@ -63,10 +63,18 @@ class ProfileHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        addSubviews()
+        setupConstraints()
+    }
+    
+    private func addSubviews() {
         addSubview(catImageView)
         addSubview(nameLabel)
         addSubview(statusLabel)
         addSubview(actionButton)
+    }
+    
+    private func setupConstraints() {
         
         NSLayoutConstraint.activate([
             catImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
@@ -86,7 +94,6 @@ class ProfileHeaderView: UIView {
             actionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             actionButton.heightAnchor.constraint(equalToConstant: 50),
-            
         ])
     }
     
